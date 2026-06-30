@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-signature: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-bg-app: var(--bg-base);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-alt: var(--bg-card-alt);
+  --color-border-color: var(--border-subtle);
+  --color-text-main: var(--text-primary);
+  --color-text-med: var(--text-secondary);
+  --color-text-mut: var(--text-muted);
+  --color-accent-gold: var(--accent);
+  --color-accent-green: #38A169;
+  --color-bg-input: var(--bg-card-alt);
+  --color-header-bg: transparent;
+
+  --color-bg-base: var(--bg-base);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-medium: var(--border-medium);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-app: #111111;
+  --bg-card: #1a1a1a; 
+  --border-color: #222222;
+  --text-main: #f0f0f0;
+  --text-med: #aaaaaa;
+  --text-mut: #555555;
+  --accent-gold: #e8c84a;
+  --accent-green: #38A169;
+  --bg-input: #161616; 
+  --header-bg: transparent;
+
+  --bg-base: #111111;
+  --bg-card-alt: #161616;
+  --border-subtle: #222222;
+  --border-medium: #2a2a2a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #aaaaaa;
+  --text-muted: #555555;
+  --accent: #e8c84a;
+  --accent-dim: rgba(232, 200, 74, 0.15);
+}
+
+.dark {
+  --bg-app: #111111;
+  --bg-card: #1a1a1a; 
+  --border-color: #222222;
+  --text-main: #f0f0f0;
+  --text-med: #aaaaaa;
+  --text-mut: #555555;
+  --accent-gold: #e8c84a;
+  --accent-green: #38A169;
+  --bg-input: #161616; 
+  --header-bg: transparent;
+}
+
+.natural {
+  --bg-app: #F5F5F0;
+  --bg-card: #E8E8E0;
+  --border-color: #D1D1C4;
+  --text-main: #2D3748;
+  --text-med: #4A5568;
+  --text-mut: #718096;
+  --accent-gold: #D69E2E;
+  --accent-green: #38A169;
+  --bg-input: #DCDCC9;
+  --header-bg: rgba(232, 232, 224, 0.65);
+}
+
+/* Custom 3D popping effects */
+.widget-3d {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-bottom-width: 1px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .widget-3d {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  border-bottom-width: 1px;
+}
+
+.widget-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .widget-3d:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Elegant sway & drift animations for background feathers */
+@keyframes float-sway-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(15deg) scale(1);
+  }
+  50% {
+    transform: translate(12px, -15px) rotate(18deg) scale(1.02);
+  }
+}
+
+@keyframes float-sway-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-45deg) scale(0.9);
+  }
+  50% {
+    transform: translate(-12px, 15px) rotate(-41deg) scale(0.93);
+  }
+}
+
+@keyframes float-sway-3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(70deg) scale(1.1);
+  }
+  50% {
+    transform: translate(8px, -8px) rotate(66deg) scale(1.13);
+  }
+}
+
+.animate-feather-1 {
+  animation: float-sway-1 25s ease-in-out infinite;
+}
+
+.animate-feather-2 {
+  animation: float-sway-2 30s ease-in-out infinite;
+}
+
+.animate-feather-3 {
+  animation: float-sway-3 35s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+}
+
+@keyframes pulse-ring-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-ring-green {
+  animation: pulse-ring-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

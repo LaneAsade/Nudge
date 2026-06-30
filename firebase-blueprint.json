@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "User tasks to be completed before a deadline",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "deadline": { "type": "string" },
+        "estimatedEffort": { "type": "number", "description": "Hours needed" },
+        "category": { "type": "string" },
+        "priorityScore": { "type": "number", "description": "Calculated by AI 0-100" },
+        "status": { "type": "string" },
+        "subtasks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "completed": { "type": "boolean" }
+            }
+          }
+        }
+      },
+      "required": ["id", "userId", "title", "deadline", "status"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "Long-term user goals broken into habits/milestones",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "targetDate": { "type": "string" },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "completed": { "type": "boolean" }
+            }
+          }
+        },
+        "progress": { "type": "number" }
+      },
+      "required": ["id", "userId", "title"]
+    },
+    "Habit": {
+      "title": "Habit",
+      "description": "Daily or repeating habits",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "frequency": { "type": "string" },
+        "streak": { "type": "integer" },
+        "completionLog": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["id", "userId", "title"]
+    },
+    "AgentAction": {
+      "title": "AgentAction",
+      "description": "Autonomous actions proposed/executed by the agent",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string" },
+        "payload": { "type": "object" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "userId", "type", "status", "timestamp"]
+    }
+  },
+  "firestore": {
+    "users/{userId}/tasks": {
+      "schema": "Task",
+      "description": "Task list for each user"
+    },
+    "users/{userId}/goals": {
+      "schema": "Goal",
+      "description": "Goal list for each user"
+    },
+    "users/{userId}/habits": {
+      "schema": "Habit",
+      "description": "Habit list for each user"
+    },
+    "users/{userId}/agentActions": {
+      "schema": "AgentAction",
+      "description": "Agent activity log for each user"
+    }
+  }
+}

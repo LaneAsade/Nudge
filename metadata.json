@@ -1,0 +1,6 @@
+{
+  "name": "Nudge",
+  "description": "It doesn't remind. It acts.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
