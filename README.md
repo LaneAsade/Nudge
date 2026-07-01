@@ -335,17 +335,6 @@ POST   /api/calendar/focus-block
 - Goal and habit analytics
 - Integration tests for agent workflows
 
-## Screenshots
-
-Add screenshots to `docs/images/`:
-
-```md
-![Nudge Landing Page](docs/images/landing-page.png)
-![Nudge Dashboard](docs/images/dashboard.png)
-![Nudge Agent Control](docs/images/agent-control.png)
-![Nudge Document Summarizer](docs/images/document-summarizer.png)
-```
-
 ## Testing
 
 ```bash
