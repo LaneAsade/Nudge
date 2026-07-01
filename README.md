@@ -409,9 +409,3 @@ git push origin feature/feature-name
 
 This project is licensed under the MIT License.
 
-## Contact
-
-**Lane ASade**
-
-- GitHub: [LaneAsade](https://github.com/LaneAsade)
-- Live App: [Nudge](https://the-last-minute-life-saver-202640251550.asia-southeast1.run.app/)
